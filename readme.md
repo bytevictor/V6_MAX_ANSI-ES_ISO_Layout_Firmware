@@ -17,6 +17,7 @@ coger el `.bin` que se genera en `/.build` y abrirlo con [QMKToolbox](https://gi
 
 Tienes que poner el teclado en modo flash para poder flashear el firmware.
 
+- Instala los drivers correspondientes con QMKToolbox: Tools > Install Drivers...
 - Lo pones en modo cable
 - Mantienes pulsado ESC y enchufas a la vez
 - Te saldrá un mensaje en amarillo en el QMKToolbox
