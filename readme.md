@@ -1,4 +1,38 @@
-# Quantum Mechanical Keyboard Firmware
+# Cómo compilar y flashear
+
+El código está en `keyboards/keychron/v6_max/ansi_encoder/keymap/via`
+
+`rules.mk` -> KEY_OVERRIDE_ENABLE = yes (Importante para que compile)
+
+`keymap.c` -> Definiciones
+
+
+
+### Compilar el código
+```bash
+qmk compile -kb keychron/v6_max/ansi_encoder -km via
+```
+
+coger el `.bin` que se genera en `/.build` y abrirlo con [QMKToolbox](https://github.com/qmk/qmk_toolbox)
+
+Tienes que poner el teclado en modo flash para poder flashear el firmware.
+
+- Lo pones en modo cable
+- Mantienes pulsado ESC y enchufas a la vez
+- Te saldrá un mensaje en amarillo en el QMKToolbox
+- Le das a flash
+- Luego manten `fn + j + z` en el teclado hasta que parpadee el backlight
+- A funcionar
+
+
+Si el teclado ha muerto es que estás subiendo una versión de firmware incorrecta, por ejemplo la V6 en vez de V6 Max (me pasó jaja).
+
+<br>
+<br>
+<br>
+<br>
+
+###  Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
 [![Discord](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
