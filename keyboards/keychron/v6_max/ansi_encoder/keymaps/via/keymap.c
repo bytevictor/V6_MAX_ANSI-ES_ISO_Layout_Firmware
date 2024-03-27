@@ -27,12 +27,73 @@ enum layers {
 };
 // clang-format off
 
+// Programmer Keys (invert the numkeys to default simbols)
+const key_override_t key_override_virgula = ko_make_basic(MOD_MASK_SHIFT, ES_GRV, ES_TILD);
+const key_override_t key_override1 = ko_make_basic(MOD_MASK_SHIFT, ES_EXLM, KC_1);
+const key_override_t key_override2 = ko_make_basic(MOD_MASK_SHIFT, ES_AT, KC_2);
+const key_override_t key_override3 = ko_make_basic(MOD_MASK_SHIFT, ES_HASH, KC_3);
+const key_override_t key_override4 = ko_make_basic(MOD_MASK_SHIFT, ES_DLR, KC_4);
+const key_override_t key_override5 = ko_make_basic(MOD_MASK_SHIFT, ES_PERC, KC_5);
+const key_override_t key_override6 = ko_make_basic(MOD_MASK_SHIFT, ES_CIRC, KC_6);
+const key_override_t key_override7 = ko_make_basic(MOD_MASK_SHIFT, ES_AMPR, KC_7);
+const key_override_t key_override8 = ko_make_basic(MOD_MASK_SHIFT, ES_ASTR, KC_8);
+const key_override_t key_override9 = ko_make_basic(MOD_MASK_SHIFT, ES_LPRN, KC_9);
+const key_override_t key_override10 = ko_make_basic(MOD_MASK_SHIFT, ES_RPRN, KC_0);
+const key_override_t key_override11 = ko_make_basic(MOD_MASK_SHIFT, ES_MINS, ES_UNDS);
+const key_override_t key_override12 = ko_make_basic(MOD_MASK_SHIFT, ES_EQL, ES_PLUS);
 
-const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, ES_AT, KC_2);
+// ES + ANSI LAYOUT MERGE
+
+/*   ` + altGr = º   */  const key_override_t key_override_no = ko_make_basic(MOD_MASK_ALT, ES_GRV, ES_MORD);
+
+/*   [ + shift = {   */  const key_override_t key_override13 = ko_make_basic(MOD_MASK_SHIFT, ES_LBRC, ES_LCBR); 
+/*   ] + shift = }   */  const key_override_t key_override14 = ko_make_basic(MOD_MASK_SHIFT, ES_RBRC, ES_RCBR);
+
+/*   , + altGr = <   */  const key_override_t key_override_menorque = ko_make_basic(MOD_MASK_ALT, KC_COMM, ES_LABK);
+/*   . + altGr = >   */  const key_override_t key_override_mayorque = ko_make_basic(MOD_MASK_ALT, KC_DOT, ES_RABK);
+
+/*   \ + shift = |   */  const key_override_t key_override15 = ko_make_basic(MOD_MASK_SHIFT, ES_BSLS, ES_PIPE); 
+/*   \ + altGr = Ç   */  const key_override_t key_override_cedilla = ko_make_basic(MOD_MASK_ALT, ES_BSLS, ES_CCED); 
+
+/*   ' + shift = "   */  const key_override_t key_override_quote = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, ES_DQUO);
+/*   ' + altGr = '   */  const key_override_t key_override_singlequote = ko_make_basic(MOD_MASK_ALT, KC_QUOT, ES_EURO);
+
+/*   / + shift = ?   */  const key_override_t key_override_question = ko_make_basic(MOD_MASK_SHIFT, ES_SLSH, ES_QUES);
+/*   / + altGr = ¿   */  const key_override_t key_override_questioninvertida = ko_make_basic(MOD_MASK_ALT, ES_SLSH, ES_IQUE);
+
+/*   e + altGr = €   */  const key_override_t key_override_euro = ko_make_basic(MOD_MASK_ALT, KC_E, ES_EURO);
+
+
+
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
-    &delete_key_override,
+    &key_override_virgula,
+    &key_override1,
+    &key_override2,
+    &key_override3,
+    &key_override4,
+    &key_override5,
+    &key_override6,
+    &key_override7,
+    &key_override8,
+    &key_override9,
+    &key_override10,
+    &key_override11,
+    &key_override12,
+    &key_override13,
+    &key_override14,
+    &key_override15,
+    &key_override_euro,
+    &key_override_singlequote,
+    &key_override_menorque,
+    &key_override_mayorque,
+    &key_override_cedilla,
+    &key_override_quote,
+    &key_override_question,
+    &key_override_questioninvertida,
+    
+
     NULL // Null terminate the array of overrides!
 };
 
@@ -54,10 +115,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,    _______,  _______,  _______,  _______,            _______,  _______),
     [WIN_BASE] = LAYOUT_ansi_109(
         KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,     KC_MUTE,    KC_PSCR,  KC_CTANA, RGB_MOD,  _______,  _______,  _______,  _______,
-        KC_GRV,   KC_1,     ES_AT,    ES_HASH,  ES_DLR,   ES_PERC,  KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,     KC_BSPC,    KC_INS,   KC_HOME,  KC_PGUP,  KC_NUM,   KC_PSLS,  KC_PAST,  KC_PMNS,
-        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,    KC_BSLS,    KC_DEL,   KC_END,   KC_PGDN,  KC_P7,    KC_P8,    KC_P9,
+        ES_GRV,   ES_EXLM,  ES_AT,    ES_HASH,  ES_DLR,   ES_PERC,  ES_CIRC,  ES_AMPR,  ES_ASTR,  ES_LPRN,  ES_RPRN,  ES_MINS,  ES_EQL,     KC_BSPC,    KC_INS,   KC_HOME,  KC_PGUP,  KC_NUM,   KC_PSLS,  KC_PAST,  KC_PMNS,
+        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     ES_LBRC,  ES_RBRC,    ES_BSLS,    KC_DEL,   KC_END,   KC_PGDN,  KC_P7,    KC_P8,    KC_P9,
         KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,              KC_ENT,                                   KC_P4,    KC_P5,    KC_P6,    KC_PPLS,
-        KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,              KC_UP,              KC_P1,    KC_P2,    KC_P3,
+        KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   ES_SLSH,              KC_RSFT,              KC_UP,              KC_P1,    KC_P2,    KC_P3,
         KC_LCTL,  KC_LWIN,  KC_LALT,                                KC_SPC,                                 KC_RALT,  KC_RWIN,  MO(WIN_FN), KC_RCTL,    KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,              KC_PDOT,  KC_PENT),
     [WIN_FN] = LAYOUT_ansi_109(
         _______,  KC_BRID,  KC_BRIU,  KC_TASK,  KC_FILE,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,    RGB_TOG,    _______,  _______,  RGB_TOG,  _______,  _______,  _______,  _______,
