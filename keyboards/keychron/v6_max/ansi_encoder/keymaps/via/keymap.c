@@ -28,7 +28,6 @@ enum layers {
 // clang-format off
 
 // Programmer Keys (invert the numkeys to default simbols)
-const key_override_t key_override_virgula = ko_make_basic(MOD_MASK_SHIFT, ES_GRV, ES_TILD);
 const key_override_t key_override1 = ko_make_basic(MOD_MASK_SHIFT, ES_EXLM, KC_1);
 const key_override_t key_override2 = ko_make_basic(MOD_MASK_SHIFT, ES_AT, KC_2);
 const key_override_t key_override3 = ko_make_basic(MOD_MASK_SHIFT, ES_HASH, KC_3);
@@ -38,13 +37,17 @@ const key_override_t key_override6 = ko_make_basic(MOD_MASK_SHIFT, ES_CIRC, KC_6
 const key_override_t key_override7 = ko_make_basic(MOD_MASK_SHIFT, ES_AMPR, KC_7);
 const key_override_t key_override8 = ko_make_basic(MOD_MASK_SHIFT, ES_ASTR, KC_8);
 const key_override_t key_override9 = ko_make_basic(MOD_MASK_SHIFT, ES_LPRN, KC_9);
-const key_override_t key_override10 = ko_make_basic(MOD_MASK_SHIFT, ES_RPRN, KC_0);
-const key_override_t key_override11 = ko_make_basic(MOD_MASK_SHIFT, ES_MINS, ES_UNDS);
-const key_override_t key_override12 = ko_make_basic(MOD_MASK_SHIFT, ES_EQL, ES_PLUS);
+const key_override_t key_override0 = ko_make_basic(MOD_MASK_SHIFT, ES_RPRN, KC_0);
 
 // ES + ANSI LAYOUT MERGE
 
+const key_override_t key_override_virgula = ko_make_basic(MOD_MASK_SHIFT, ES_GRV, ES_TILD);
+const key_override_t key_override_barrabaja = ko_make_basic(MOD_MASK_SHIFT, ES_MINS, ES_UNDS);
+const key_override_t key_override_mas = ko_make_basic(MOD_MASK_SHIFT, ES_EQL, ES_PLUS);
+
 /*   ` + altGr = º   */  const key_override_t key_override_no = ko_make_basic(MOD_MASK_ALT, ES_GRV, ES_MORD);
+
+/*   1 + altGr = ¡   */  const key_override_t key_override_no = ko_make_basic(MOD_MASK_ALT, ES_EXLM, ES_IEXL);
 
 /*   [ + shift = {   */  const key_override_t key_override13 = ko_make_basic(MOD_MASK_SHIFT, ES_LBRC, ES_LCBR); 
 /*   ] + shift = }   */  const key_override_t key_override14 = ko_make_basic(MOD_MASK_SHIFT, ES_RBRC, ES_RCBR);
@@ -56,7 +59,8 @@ const key_override_t key_override12 = ko_make_basic(MOD_MASK_SHIFT, ES_EQL, ES_P
 /*   \ + altGr = Ç   */  const key_override_t key_override_cedilla = ko_make_basic(MOD_MASK_ALT, ES_BSLS, ES_CCED); 
 
 /*   ' + shift = "   */  const key_override_t key_override_quote = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, ES_DQUO);
-/*   ' + altGr = '   */  const key_override_t key_override_singlequote = ko_make_basic(MOD_MASK_ALT, KC_QUOT, ES_EURO);
+/*   ' + altGr = '   */  const key_override_t key_override_singlequote = ko_make_basic(MOD_MASK_ALT, KC_QUOT, ES_QUOT);
+/*   ' + shift + altGr = ¨ */  const key_override_t key_override_dieresis = ko_make_basic(MOD_MASK_SA, KC_QUOT, ES_DIAE);
 
 /*   / + shift = ?   */  const key_override_t key_override_question = ko_make_basic(MOD_MASK_SHIFT, ES_SLSH, ES_QUES);
 /*   / + altGr = ¿   */  const key_override_t key_override_questioninvertida = ko_make_basic(MOD_MASK_ALT, ES_SLSH, ES_IQUE);
@@ -92,8 +96,8 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &key_override_quote,
     &key_override_question,
     &key_override_questioninvertida,
-    
-
+    &key_override_dieresis,
+    &key_override_no,
     NULL // Null terminate the array of overrides!
 };
 
