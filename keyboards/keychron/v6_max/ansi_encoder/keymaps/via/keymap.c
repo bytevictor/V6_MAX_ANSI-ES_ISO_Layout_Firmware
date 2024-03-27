@@ -47,15 +47,15 @@ const key_override_t key_override_mas = ko_make_basic(MOD_MASK_SHIFT, ES_EQL, ES
 
 /*   ` + altGr = º   */  const key_override_t key_override_no = ko_make_basic(MOD_MASK_ALT, ES_GRV, ES_MORD);
 
-/*   1 + altGr = ¡   */  const key_override_t key_override_no = ko_make_basic(MOD_MASK_ALT, ES_EXLM, ES_IEXL);
+/*   1 + altGr = ¡   */  const key_override_t key_override_exclamacioninvertida = ko_make_basic(MOD_MASK_ALT, ES_EXLM, ES_IEXL);
 
-/*   [ + shift = {   */  const key_override_t key_override13 = ko_make_basic(MOD_MASK_SHIFT, ES_LBRC, ES_LCBR); 
-/*   ] + shift = }   */  const key_override_t key_override14 = ko_make_basic(MOD_MASK_SHIFT, ES_RBRC, ES_RCBR);
+/*   [ + shift = {   */  const key_override_t key_override_Lbracket = ko_make_basic(MOD_MASK_SHIFT, ES_LBRC, ES_LCBR); 
+/*   ] + shift = }   */  const key_override_t key_override_Rbracket = ko_make_basic(MOD_MASK_SHIFT, ES_RBRC, ES_RCBR);
 
 /*   , + altGr = <   */  const key_override_t key_override_menorque = ko_make_basic(MOD_MASK_ALT, KC_COMM, ES_LABK);
 /*   . + altGr = >   */  const key_override_t key_override_mayorque = ko_make_basic(MOD_MASK_ALT, KC_DOT, ES_RABK);
 
-/*   \ + shift = |   */  const key_override_t key_override15 = ko_make_basic(MOD_MASK_SHIFT, ES_BSLS, ES_PIPE); 
+/*   \ + shift = |   */  const key_override_t key_override_cauce = ko_make_basic(MOD_MASK_SHIFT, ES_BSLS, ES_PIPE); 
 /*   \ + altGr = Ç   */  const key_override_t key_override_cedilla = ko_make_basic(MOD_MASK_ALT, ES_BSLS, ES_CCED); 
 
 /*   ' + shift = "   */  const key_override_t key_override_quote = ko_make_basic(MOD_MASK_SHIFT, KC_QUOT, ES_DQUO);
@@ -66,7 +66,6 @@ const key_override_t key_override_mas = ko_make_basic(MOD_MASK_SHIFT, ES_EQL, ES
 /*   / + altGr = ¿   */  const key_override_t key_override_questioninvertida = ko_make_basic(MOD_MASK_ALT, ES_SLSH, ES_IQUE);
 
 /*   e + altGr = €   */  const key_override_t key_override_euro = ko_make_basic(MOD_MASK_ALT, KC_E, ES_EURO);
-
 
 
 
@@ -82,12 +81,11 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &key_override7,
     &key_override8,
     &key_override9,
-    &key_override10,
-    &key_override11,
-    &key_override12,
-    &key_override13,
-    &key_override14,
-    &key_override15,
+    &key_override0,
+    &key_override_mas,
+    &key_override_barrabaja,
+    &key_override_Lbracket,
+    &key_override_Rbracket,
     &key_override_euro,
     &key_override_singlequote,
     &key_override_menorque,
@@ -98,6 +96,8 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &key_override_questioninvertida,
     &key_override_dieresis,
     &key_override_no,
+    &key_override_cauce,
+    &key_override_exclamacioninvertida,
     NULL // Null terminate the array of overrides!
 };
 
