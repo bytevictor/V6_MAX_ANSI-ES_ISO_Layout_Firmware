@@ -13,6 +13,11 @@ El código está en `keyboards/keychron/v6_max/ansi_encoder/keymap/via`
 qmk compile -kb keychron/v6_max/ansi_encoder -km via
 ```
 
+OR
+
+```bash
+make keychron/v6_max/ansi_encoder:via
+```
 coger el `.bin` que se genera en `/.build` y abrirlo con [QMKToolbox](https://github.com/qmk/qmk_toolbox)
 
 Tienes que poner el teclado en modo flash para poder flashear el firmware.
