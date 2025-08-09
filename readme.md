@@ -2,6 +2,12 @@
 
 [.bin RELEASE COMPILADOS](https://github.com/bytevictor/V6_MAX_ANSI-ES_ISO_Layout_Firmware/releases/tag/v.bytevictor)
 
+# EDITOR DE KEYCHRON:
+
+(El USEVia.app no termina de funcionar bien)
+
+`https://launcher.keychron.com/#/keymap` 
+
 # Cómo compilar y flashear
 
 El código está en `keyboards/keychron/v6_max/ansi_encoder/keymap/via`
