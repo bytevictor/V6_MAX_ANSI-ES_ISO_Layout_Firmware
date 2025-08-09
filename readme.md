@@ -6,7 +6,7 @@
 
 (El USEVia.app no termina de funcionar bien)
 
-`https://launcher.keychron.com/#/keymap` 
+https://launcher.keychron.com/#/keymap
 
 # Cómo compilar y flashear
 
