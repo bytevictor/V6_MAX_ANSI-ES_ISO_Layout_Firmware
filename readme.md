@@ -1,4 +1,70 @@
-# Quantum Mechanical Keyboard Firmware
+# COMPILADOS
+
+[.bin RELEASE COMPILADOS](https://github.com/bytevictor/V6_MAX_ANSI-ES_ISO_Layout_Firmware/releases/tag/v.bytevictor)
+
+# EDITOR DE KEYCHRON:
+
+(El USEVia.app no termina de funcionar bien)
+
+https://launcher.keychron.com/#/keymap
+
+# Cómo compilar y flashear
+
+El código está en `keyboards/keychron/v6_max/ansi_encoder/keymap/via`
+
+`rules.mk` -> KEY_OVERRIDE_ENABLE = yes (Importante para que compile)
+
+`keymap.c` -> Definiciones
+
+
+
+### Compilar el código
+Primero de todo, crea un venv de python y te instalas el requirements del repo
+
+```bash
+sudo apt update
+sudo apt install python3 python-is-python3 python3-venv
+python -m venv venv
+source venv/bin/activate
+```
+
+```bash
+qmk compile -kb keychron/v6_max/ansi_encoder -km via
+```
+
+OR
+
+```bash
+make keychron/v6_max/ansi_encoder:via
+```
+coger el `.bin` que se genera en `/.build` y abrirlo con [QMKToolbox](https://github.com/qmk/qmk_toolbox)
+
+Tienes que poner el teclado en modo flash para poder flashear el firmware.
+
+- Instala los drivers correspondientes con QMKToolbox: Tools > Install Drivers...
+- Lo pones en modo cable
+- Mantienes pulsado ESC y enchufas a la vez
+- Te saldrá un mensaje en amarillo en el QMKToolbox
+- Le das a flash
+- Luego manten `fn + j + z` en el teclado hasta que parpadee el backlight
+- A funcionar
+
+
+Si el teclado ha muerto es que estás subiendo una versión de firmware incorrecta, por ejemplo la V6 en vez de V6 Max (me pasó jaja).
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+---
+---
+---
+# Original Readme:
+
+###  Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
 [![Discord](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
