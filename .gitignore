@@ -1,3 +1,6 @@
+# venv de python para compilar
+venv/
+
 # Junk files
 *.bak
 *.swp
