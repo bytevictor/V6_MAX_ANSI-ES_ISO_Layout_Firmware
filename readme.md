@@ -28,6 +28,13 @@ python -m venv venv
 source venv/bin/activate
 ```
 
+> [!WARNING]
+> Por algún motivo la última actualización obliga a instalar también esto:
+```bash
+sudo apt install dfu-util
+```
+Si no, no compila
+
 ```bash
 qmk compile -kb keychron/v6_max/ansi_encoder -km via
 ```
